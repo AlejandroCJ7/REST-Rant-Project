@@ -7,10 +7,10 @@ function new_form () {
           <main>
             <h1>Add a New Place</h1>
             
-            <form method="POST" action="/places">
-  <div className="form-group">
+            <form method="POST" action={"/places/${data.place.id}?_method=PUT"}>
+  <div className="row">
     <label htmlFor="name">Place Name</label>
-    <input className="form-control" id="name" name="name" required />
+    <input className="form-control" id="name" name="name" value={data.place.name} required />
   </div>
   <div className="form-group">
     <label htmlFor="pic">Place Picture</label>
