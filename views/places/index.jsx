@@ -1,13 +1,12 @@
 const react = require ('react')
 const Def = require ("./default")
-const router = require('express').Router()
  
-function index (data) {
-  let placesFormatted = data.places.map((place, index) => {
+function index ({ places }) {
+  let placesFormatted = places.map((place) => {
     return (
       <div className="col-sm-6">
         <h2>
-          <a href={`/places/${index}`} >
+          <a href={`/places/${place._id}`} >
             {place.name}
           </a>
         </h2>
@@ -26,12 +25,14 @@ function index (data) {
     return (
       <Def>
           <main>
-              <h1>PLACES INDEX PAGE</h1>
+              <h1>places to rant or rave about</h1>
+              <div className="row">
               {placesFormatted}
+              </div>
           </main>
       </Def>
-  )
+      )
   }
   
 
-module.exports = index
+module.exports = Index
